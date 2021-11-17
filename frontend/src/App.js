@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-// import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import logo from './take-a-vacation.jpeg'; 
+import {
+  Row, Col, Image, ListGroup, Card, Button, Form, Modal, Jumbotron, Container,
+} from 'react-bootstrap';
+import background from './background.jpeg'; 
 
-console.log(logo);
 
 function App() {
 
@@ -12,39 +11,78 @@ function App() {
     
     <div className="App">
       <header className="App-header">
-          <h1>
-            Expert Flight Search
-          </h1>
-          <input type="radio" value="oneway" name="genbookingtypeder" /> One way
-          <input type="radio" value="round" name="bookingtype" /> Round Trip
+      <Jumbotron style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', height: '300px', backgroundPosition: 'center'}}>
+            <h1 style={{ color: 'white' }}>
+              {' '}
+             Cassandra Flight Booking
+            </h1>
+            <p style={{ color: 'white' }}>
+              •
+              Find cheap flights
+              •
+            </p>
+            <p>
+            </p>
+          </Jumbotron>
+
 
       </header>
-      
-    
-    <div className="form" 
-    // style={{
-      // background: `url(${logo})`, width:'100%', height:'1000px', 
-    // }}
-    >
+      <Container>
+      <Row>
+            <Col sm={5} md={4} lg={2}>
+              </Col>
+            <Col>
+              <ListGroup>
+                <h1>
+              Expert Flight Search
+            </h1>
+              </ListGroup>
+              <hr></hr>
+              <input type="radio" value="oneway" name="genbookingtypeder" /> One way
+              <input type="radio" value="round" name="bookingtype" /> Round Trip
+              <hr></hr>
+          
+          <div className="form">
       
       <form>
-      
-        <label>
-          <span><input type="text" placeholder="Leaving from" name="source" /> </span>
-        </label>
-  
-        <label>
-          {/* Going to: */}
-          <input type="text" placeholder="Going to" name="destination" /> <br /><br/>
-        </label>
+      <div className="form-group">
+        <Row>
+       <Col>
+        <label className="text-muted">From:</label>
+        <input  type="text" className="form-control" placeholder="Leaving from" />
+        </Col>
+        <Col>
+        <label className="text-muted">Departure Date:</label>
+        <input  type="date" className="form-control"/>
+        </Col>
 
-        <input type="date" value="Departing on"/> <br/> <br/>
+        </Row><hr></hr>
+        <Row>
+       <Col>
+        <label className="text-muted">To:</label>
+        <input  type="text" className="form-control" placeholder="Going to" />
+        </Col>
+        <Col>
+        <label className="text-muted">Arrival Date:</label>
+        <input  type="date" className="form-control"/>
+        </Col>
+        </Row>
+       
+      </div>
         
-        <input type="submit" value="Search" />
+        <Button type="submit" value="Search" variant="info">
+          Serach
+        </Button>
         
     </form>
     
       </div>
+            </Col>
+      </Row>
+      </Container>
+     
+    
+    
     </div>
     
   );
