@@ -69,7 +69,10 @@ function App() {
         </Row>
        
       </div>
-        
+      <div className="form-group">
+        <label className="text-muted">Carrier</label>
+        <input  type="text" className="form-control"/>
+    </div>
         <Button type="submit" value="Search" variant="info">
           Serach
         </Button>
