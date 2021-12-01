@@ -6,11 +6,16 @@ import {
   
   function Home() {
     const [show, setShow] = useState(false);
-
+    const [error, seterror] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {
-      if(origin && destination)
+      if(origin && destination){
+        seterror(false);
        setShow(true);
+      }
+     else
+       seterror(true);
+
     }
     const [origin, setOrigin] = useState("");
     const [destination, setDestination] = useState("");
@@ -89,6 +94,7 @@ import {
             <div className="form">
         
         <form>
+        {error && <div className="alert alert-danger" style={{backgroundColor: '#a98e91'}}>All fields are required</div>}
         <div className="form-group">
         <div className="form-group">
           <label className="text-muted">Carrier</label>
